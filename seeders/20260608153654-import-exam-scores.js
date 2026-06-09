@@ -76,23 +76,23 @@ module.exports = {
               });
           }
         })
-        .on("end", () => {
-          // Chờ xử lý cuối cùng nếu còn
+        .on("end", async () => {
+          // Chờ tất cả batch đang xử lý xong
           while (isProcessing) {
-            new Promise(r => setTimeout(r, 100));
+            await new Promise(r => setTimeout(r, 100));
           }
+
           if (records.length > 0) {
-            stream.pause();
-            // console.log(`Inserting final batch: ${records.length} records`);
-            queryInterface.bulkInsert("exam_scores", records)
-              .then(() => {
-                records = [];
-                stream.resume();
-              })
-              .catch((err) => {
-                console.error("Error inserting batch: ", err);
-                reject(err);
-              });
+            try {
+              console.log("Uploading final batch: ", records.length, " records");
+              await queryInterface.bulkInsert("exam_scores", records);
+              records.length = 0;
+              console.log("Final batch inserted successfully");
+            } catch (err) {
+              console.error("Error inserting final batch: ", err);
+              reject(err);
+              return;
+            }
           }
           resolve();
         })
