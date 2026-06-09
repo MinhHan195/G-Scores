@@ -96,8 +96,59 @@ module.exports = {
         allowNull: true
       },
 
+      group_a: {
+        type: Sequelize.DECIMAL(4, 2),
+        allowNull: true,
+        validate: {
+          min: 0,
+          max: 40
+        }
+      },
+
+      group_a1: {
+        type: Sequelize.DECIMAL(4, 2),
+        allowNull: true,
+        validate: {
+          min: 0,
+          max: 40
+        }
+      },
+
+      group_b: {
+        type: Sequelize.DECIMAL(4, 2),
+        allowNull: true,
+        validate: {
+          min: 0,
+          max: 40
+        }
+      },
+
+      group_c: {
+        type: Sequelize.DECIMAL(4, 2),
+        allowNull: true,
+        validate: {
+          min: 0,
+          max: 40
+        }
+      },
+
+      group_d: {
+        type: Sequelize.DECIMAL(4, 2),
+        allowNull: true,
+        validate: {
+          min: 0,
+          max: 40
+        }
+      },
+
       created_at: Sequelize.DATE,
       updated_at: Sequelize.DATE
+    });
+
+    await queryInterface.addIndex('exam_scores', ['group_a'], {
+      name: 'idx_exam_group_a',
+      unique: false,
+      using: 'BTREE'
     });
   },
 
