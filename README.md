@@ -18,4 +18,5 @@ Nếu gặp lỗi thì chạy lệnh "npx sequelize-cli db:seed:undo:all" để 
 
 B7: Khởi chạy Backend bằng câu lệnh "npm start".
 
-Lưu ý: Dự án được xây dựng trên Nodejs verion 20.19.1 và NPM version 10.8.2
+###Lưu ý:
+Dự án được xây dựng trên Nodejs verion 20.19.1 và NPM version 10.8.2
