@@ -20,10 +20,11 @@ exports.getReports = async (req, res, next) => {
     }
 };
 
-exports.getListTopGroupA = async (req, res, next) => {
+exports.getListTopGroup = async (req, res, next) => {
     try {
         const limit = parseInt(req.query.limit)
-        const result = await scoresService.getListTopGroupA(limit);
+        const group = req.query.group
+        const result = await scoresService.getListTopGroup(group, limit);
         return res.send(result);
     } catch (error) {
         return next(error);

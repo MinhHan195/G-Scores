@@ -33,11 +33,11 @@ class scoresRepository {
         }
     }
 
-    async getListTopGroupA(limit) {
+    async getListTopGroupA(attributes, group, limit) {
         try {
             const result = await this.scores.findAll({
-                attributes: ["sbd", "toan", "vat_li", "hoa_hoc", "group_a"],
-                order: [["group_a", "DESC"]],
+                attributes: attributes,
+                order: [[group, "DESC"]],
                 limit: limit,
             });
             return result;

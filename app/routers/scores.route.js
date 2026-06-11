@@ -7,6 +7,6 @@ router.route("/check").get(scoresController.getScoresBySBD);
 
 router.route("/getReports").get(scoresController.getReports);
 
-router.route("/getListTopGroupA").get(scoresController.getListTopGroupA);
+router.route("/getListTopGroup").get(scoresController.getListTopGroup);
 
 module.exports = router;

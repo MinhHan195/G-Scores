@@ -150,6 +150,28 @@ module.exports = {
       unique: false,
       using: 'BTREE'
     });
+
+    await queryInterface.addIndex('exam_scores', ['group_a1'], {
+      name: 'idx_exam_group_a1',
+      unique: false,
+      using: 'BTREE'
+    });
+
+    await queryInterface.addIndex('exam_scores', ['group_b'], {
+      name: 'idx_exam_group_b',
+      unique: false,
+      using: 'BTREE'
+    });
+    await queryInterface.addIndex('exam_scores', ['group_c'], {
+      name: 'idx_exam_group_c',
+      unique: false,
+      using: 'BTREE'
+    });
+    await queryInterface.addIndex('exam_scores', ['group_d'], {
+      name: 'idx_exam_group_d',
+      unique: false,
+      using: 'BTREE'
+    });
   },
 
   async down(queryInterface, Sequelize) {
