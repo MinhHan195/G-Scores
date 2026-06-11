@@ -69,7 +69,7 @@ exports.getListTopGroup = async (group, limit) => {
     }
     try {
         const ScoresRepository = new scoresRepository();
-        const result = await ScoresRepository.getListTopGroupA(attribute, group, limit);
+        const result = await ScoresRepository.getListTopGroup(attribute, group, limit);
         const minScores = Object.values(result).at(-1)[group];
         const buffer = await ScoresRepository.getListScores(attribute, { [group]: minScores })
         const registrationNumber = result.map(item => item.sbd);
