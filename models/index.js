@@ -12,7 +12,7 @@ const db = {};
 
 let sequelize;
 sequelize = new Sequelize(cfg.database, cfg.username, cfg.password, {
-  host: cfg.host, port: cfg.port, dialect: cfg.dialect, logging: cfg.logging, pool: cfg.pool
+  host: cfg.host, port: cfg.port, dialect: cfg.dialect, ssl: cfg.ssl, logging: cfg.logging, pool: cfg.pool
 });
 
 fs
