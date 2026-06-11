@@ -8,7 +8,7 @@ B2: Chạy lệnh "npm install" trên terminal để cài đặt thư viện.
 
 B3: Tạo database "GScores_development" trên MySQL (hoặc PostgreSQL).
 
-B4: Cập nhập thông tin kết nối database tại config/config.json và app/config/index.js.
+B4: Cập nhập thông tin kết nối database tại config/config.json và app/config/index.js. (Chú ý bật tắt SSL tùy theo db local hay host)
 
 B5: Chạy lệnh "npx sequelize-cli db:migrate" để tạo các bảng. Nếu gặp lỗi thì chạy lệnh
 "npx sequelize-cli db:migrate:undo:all" để rollback sau đó thực hiện lại B5.
