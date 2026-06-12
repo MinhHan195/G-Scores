@@ -23,8 +23,7 @@ exports.getReports = async (req, res, next) => {
 exports.getListTopGroup = async (req, res, next) => {
     try {
         const limit = parseInt(req.query.limit)
-        const group = req.query.group
-        const result = await scoresService.getListTopGroup(group, limit);
+        const result = await scoresService.getListTopGroup(limit);
         return res.send(result);
     } catch (error) {
         return next(error);

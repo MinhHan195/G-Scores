@@ -10,18 +10,18 @@ const configs = {
     development: {
         app: commonApp,
         db: {
-            username: 'postgres.ovctostkpzgwbnrvtnxr',
-            password: 'Han!@#19052003',
-            database: 'postgres',
-            host: 'aws-1-ap-southeast-2.pooler.supabase.com',
-            port: '5432',
-            dialect: 'postgres',
-            ssl: true,
-            logging: false,
+            username: 'root',
+            password: null,
+            database: 'gscores_development',
+            host: 'localhost',
+            port: '3306',
+            dialect: 'mysql',
+            ssl: false,
+            logging: console.log,
             pool: {
                 max: 5,
                 min: 0,
-                acquire: 30000,
+                acquire: 60000,
                 idle: 10000
             }
         }
@@ -36,11 +36,11 @@ const configs = {
             port: '5432',
             dialect: 'postgres',
             ssl: true,
-            logging: false,
+            logging: console.log,
             pool: {
                 max: 5,
                 min: 0,
-                acquire: 30000,
+                acquire: 60000,
                 idle: 10000
             }
         }
@@ -59,7 +59,7 @@ const configs = {
             pool: {
                 max: 5,
                 min: 0,
-                acquire: 30000,
+                acquire: 60000,
                 idle: 10000
             }
         }

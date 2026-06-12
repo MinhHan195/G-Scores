@@ -48,7 +48,7 @@ exports.getReports = async () => {
 
 }
 
-exports.getListTopGroup = async (group, limit) => {
+exports.getListTopGroupByParam = async (group, limit) => {
     let attribute = []
     let subjects = []
     if (group == 'group_a') {
@@ -99,4 +99,23 @@ exports.getListTopGroup = async (group, limit) => {
         throw err
     }
 
+}
+
+exports.getListTopGroup = async (limit) => {
+    try {
+        let data = {};
+        const groupA = await this.getListTopGroupByParam('group_a', limit)
+        data['group_a'] = groupA;
+        const groupA1 = await this.getListTopGroupByParam('group_a1', limit)
+        data['group_a1'] = groupA1;
+        const groupB = await this.getListTopGroupByParam('group_b', limit)
+        data['group_b'] = groupB;
+        const groupC = await this.getListTopGroupByParam('group_c', limit)
+        data['group_c'] = groupC;
+        const groupD = await this.getListTopGroupByParam('group_d', limit)
+        data['group_d'] = groupD;
+        return data
+    } catch (error) {
+        throw error
+    }
 }
